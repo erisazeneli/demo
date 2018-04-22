@@ -1,0 +1,33 @@
+<section class="issue">
+  <div
+    class="main-table-header"
+  >
+  <span>Assignee</span>
+  <span>Issue Title</span>
+  <span>Last updated</span>
+  <span>Status</span>
+
+</div>
+  <div
+    class="main-table-info"
+    ng-repeat="issue in $ctrl.issues"
+  >
+    <span ng-if="issue.assignee">
+      <img src="{{issue.assignee.avatar_url}}" >
+      {{issue.assignee.login}}
+    </span>
+    <span class="unassigned" ng-if="!issue.assignee">Unassigned</span>
+    <span><a href="{{issue.html_url}}" target="_blank">{{issue.title}}</a></span>
+    <span>{{issue.updated_at | date}}</span>
+    <span class="status">{{issue.state}}</span>
+
+</div>
+</section>
+<section class="pagination">
+    <div 
+      class="pagination-element"
+      ng-repeat="i in $ctrl.pagination"
+    >
+      <span ng-click="$ctrl._getIssues(i,30)">{{i}}</span>
+  </div>
+</section>

@@ -1,9 +1,14 @@
 @import '../common';
 
 .navbar {
-  height: 6.5rem;
-  background-color: $primaryColor;
+  display: flex;
+  height: 3rem;
+  background-color: #0277bd;
   padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: white;
 
   .nav-links,
   .logo {
